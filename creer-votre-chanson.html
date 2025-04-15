@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer votre chanson personnalisée - Melody Tale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fff6e6, #ffe6f0);
+      color: #333;
+    }
+    header {
+      background: #ffc107;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #ff4081;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .checkbox-group, .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .checkbox-group label, .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    button {
+      background: #ff4081;
+      color: #fff;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      margin: 2rem auto 0;
+    }
+    button:hover {
+      background: #e91e63;
+    }
+  </style>
+</head>
+<body>
+  <header>Créer votre chanson personnalisée</header>
+  <section>
+    <h2>34,90€ - Super Cadeau, Qualité Pro, Livraison Rapide</h2>
+    <form>
+      <div class="form-group">
+        <label>Genre de la chanson :</label>
+        <div class="radio-group">
+          <label><input type="radio" name="genre"> Surprenez-moi !</label>
+          <label><input type="radio" name="genre"> Variété Française</label>
+          <label><input type="radio" name="genre"> Style Oriental</label>
+          <label><input type="radio" name="genre"> Pop</label>
+          <label><input type="radio" name="genre"> Rock</label>
+          <label><input type="radio" name="genre"> Jazz</label>
+          <label><input type="radio" name="genre"> Reggae</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Humeur de la chanson :</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox"> Heureux</label>
+          <label><input type="checkbox"> Romantique</label>
+          <label><input type="checkbox"> Joyeux</label>
+          <label><input type="checkbox"> Comique</label>
+          <label><input type="checkbox"> Triste</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Voix souhaitée :</label>
+        <div class="radio-group">
+          <label><input type="radio" name="voix"> Homme</label>
+          <label><input type="radio" name="voix"> Femme</label>
+          <label><input type="radio" name="voix"> Pas de préférence</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Pour qui est la chanson ?</label>
+        <input type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Quelle est votre relation avec cette personne ?</label>
+        <input type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Occasion spéciale ?</label>
+        <input type="text" placeholder="(Anniversaire, mariage...)">
+      </div>
+
+      <div class="form-group">
+        <label>Parlez-nous de la personne à qui est destinée la chanson :</label>
+        <textarea rows="6"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Ajouter une phrase spécifique (+2,50€) :</label>
+        <input type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Nombre de couplets :</label>
+        <div class="radio-group">
+          <label><input type="radio" name="couplets"> 2</label>
+          <label><input type="radio" name="couplets"> 3 (+9,90€)</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Quel est votre prénom ou surnom ?</label>
+        <input type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Inclure mon prénom dans la chanson (+2,50€) :</label>
+        <input type="checkbox">
+      </div>
+
+      <div class="form-group">
+        <label>Livraison :</label>
+        <select>
+          <option>Standard (3 jours)</option>
+          <option>Rapide (2 jours, +16,50€)</option>
+          <option>Express (24h, +20€)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Ajouter sur plateformes de streaming ? (+45€)</label>
+        <input type="checkbox">
+      </div>
+
+      <button type="submit">Recevoir ma chanson</button>
+    </form>
+  </section>
+</body>
+</html>
