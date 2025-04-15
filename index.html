@@ -1,46 +1,165 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Melody Tale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #fffbe6;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f0;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    }
+    header {
+      background: linear-gradient(45deg, #ff4e50, #f9d423);
+      color: white;
+      padding: 40px 20px;
       text-align: center;
+      animation: fadeIn 1s ease-in;
     }
-    img {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-    h1 {
+    header h1 {
       font-size: 2.5rem;
-      color: #e88e2e;
+      margin-bottom: 10px;
     }
-    p {
-      max-width: 600px;
+    header p {
       font-size: 1.2rem;
     }
-    .contact {
+    .section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .highlight {
+      font-size: 2rem;
+      color: #ff4e50;
+    }
+    .cta-button {
+      display: inline-block;
       margin-top: 20px;
-      font-size: 0.9rem;
-      color: #666;
+      padding: 12px 30px;
+      background-color: #f9d423;
+      color: #333;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #ff4e50;
+      color: white;
+    }
+    .steps {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .step {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+    .step:hover {
+      transform: translateY(-5px);
+    }
+    .faq {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item h4 {
+      margin-bottom: 5px;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <img src="Logo-Melody-Tale.png" alt="Melody Tale Logo" />
-  <h1>Bienvenue sur Melody Tale</h1>
-  <p>Votre chanson personnalisée, en français, anglais, italien ou espagnol. Racontez-nous votre histoire, nous la transformons en musique.</p>
-  <div class="contact">Contact : melody.tale.tonhistoire.enchanson@gmail.com</div>
+  <header>
+    <h1>Bienvenue chez Melody Tale</h1>
+    <p>Bénéficiez de 50% de remise sur votre chanson personnalisée !</p>
+  </header>
+
+  <section class="section">
+    <p class="highlight">Une chanson qui vous ressemble ?</p>
+    <p>Une chanson unique et de bonne qualité composée pour vous grâce à votre histoire, vos idées…
+       Vous personnalisez et nous, en studio, faisons opérer la magie !</p>
+    <a href="#creation" class="cta-button">Créer ma chanson</a>
+  </section>
+
+  <section class="section">
+    <h2>Les étapes</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>1. Partagez</h3>
+        <p>Parlez-nous de la personne et de l’occasion spéciale.</p>
+      </div>
+      <div class="step">
+        <h3>2. Choisissez le style</h3>
+        <p>Pop 🎸, Jazz 🎷, Oriental 🪘, Rap 🎤 et bien plus encore !</p>
+      </div>
+      <div class="step">
+        <h3>3. Recevez votre chanson</h3>
+        <p>Livraison en moins de 72h, qualité studio garantie.</p>
+      </div>
+    </div>
+    <a href="#creation" class="cta-button">Créer ma chanson</a>
+  </section>
+
+  <section class="section">
+    <h2>FAQ</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h4>Combien de temps faut-il pour recevoir ma chanson ?</h4>
+        <p>Moins de 72 heures. Livraison en 24h possible en option.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Quel est le prix ?</h4>
+        <p>À partir de 34,90 €. Toutes les étapes sont incluses jusqu’à la livraison finale.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Puis-je sélectionner le style de ma chanson ?</h4>
+        <p>Oui bien sûr !</p>
+      </div>
+      <div class="faq-item">
+        <h4>Comment livrez-vous ma chanson ?</h4>
+        <p>Vous recevrez un fichier MP3 avec les paroles.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Et si la chanson ne me plaît pas ?</h4>
+        <p>Une révision gratuite est incluse pour vous garantir satisfaction.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Puis-je écouter un exemple ?</h4>
+        <p>Oui bien sûr. <a href="#exemples">Cliquez ici</a> pour découvrir des extraits.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Y a-t-il une utilisation limitée de ma chanson ?</h4>
+        <p>Non, elle est entièrement à vous !</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Melody Tale — Donnez vie à vos histoires en musique</p>
+  </footer>
 </body>
 </html>
-
+Mise à jour de la page d'accueil
