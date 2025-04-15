@@ -94,7 +94,32 @@
     <del>69,90€</del><span style="color:#e91e63;font-weight:bold">34,90€</span>
   </div>
   <form id="songForm">
-    <label for="genre">Genre de la chanson :</label>
+
+    <label>Pour qui est la chanson ?</label>
+    <input type="text" placeholder="Nom de la personne ou surnom" />
+
+    <label>Quelle est votre relation avec cette personne ?</label>
+    <input type="text" placeholder="Ex: Ma meilleure amie, mon frère..." />
+
+    <label>Occasion spéciale ?</label>
+    <input type="text" placeholder="Ex: Anniversaire, mariage, naissance..." />
+
+    <label>Parlez-nous de cette personne / histoire :</label>
+    <textarea maxlength="10000" rows="6" placeholder="Décrivez ici les détails que vous souhaitez intégrer dans la chanson..."></textarea>
+
+    <label>Ajouter une phrase spécifique ? (+2,50€)</label>
+    <input type="text" placeholder="Votre phrase à inclure (facultatif)" />
+
+    <label>Votre prénom ou surnom :</label>
+    <input type="text" placeholder="Votre prénom" />
+
+    <label>Mentionner votre prénom dans la chanson ? (+2,50€)</label>
+    <div class="options">
+      <div class="option" data-price="2.5">Oui</div>
+      <div class="option">Non</div>
+    </div>
+
+    <label>Genre de la chanson :</label>
     <div class="options" id="genreOptions">
       <div class="option">Surprenez-moi !</div>
       <div class="option">Variété Française</div>
@@ -109,7 +134,7 @@
       <div class="option">Comptine</div>
     </div>
 
-    <label for="mood">Mood de la chanson :</label>
+    <label>Mood de la chanson :</label>
     <div class="options" id="moodOptions">
       <div class="option">Heureux</div>
       <div class="option">Romantique</div>
@@ -120,7 +145,7 @@
       <div class="option">Comique</div>
     </div>
 
-    <label for="voice">Voix :</label>
+    <label>Voix :</label>
     <div class="options">
       <div class="option">Homme</div>
       <div class="option">Femme</div>
@@ -133,29 +158,42 @@
       <div class="option" data-price="9.9">3 couplets (+9,90€)</div>
     </div>
 
+    <label>Livraison :</label>
+    <div class="options">
+      <div class="option" data-price="0">Standard (3 jours)</div>
+      <div class="option" data-price="16.5">Rapide (2 jours) +16,50€</div>
+      <div class="option" data-price="20">Ultra Express (24h) +20€</div>
+    </div>
+
+    <label>Ajouter sur les plateformes de streaming ? (+45€)</label>
+    <div class="options">
+      <div class="option" data-price="45">Oui</div>
+      <div class="option">Non</div>
+    </div>
+
     <div class="total">Prix total : 34,90€</div>
 
     <button type="submit">Recevoir ma chanson</button>
   </form>
 
   <script>
-    // Simple selection highlighting and price update placeholder
+    let basePrice = 34.9;
+    let selectedExtras = [];
+
     document.querySelectorAll('.option').forEach(opt => {
       opt.addEventListener('click', () => {
-        // toggle 'selected' class in group
-        const parent = opt.parentElement;
-        parent.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+        const group = opt.parentElement;
+        group.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
         opt.classList.add('selected');
 
-        // update price if applicable
-        if(opt.dataset.price){
-          const base = 34.9;
-          const extra = parseFloat(opt.dataset.price);
-          const total = (base + extra).toFixed(2);
-          document.querySelector('.total').textContent = `Prix total : ${total}€`;
-        } else {
-          document.querySelector('.total').textContent = `Prix total : 34,90€`;
-        }
+        const allOptions = document.querySelectorAll('[data-price]');
+        let total = basePrice;
+        allOptions.forEach(option => {
+          if (option.classList.contains('selected')) {
+            total += parseFloat(option.dataset.price);
+          }
+        });
+        document.querySelector('.total').textContent = `Prix total : ${total.toFixed(2)}€`;
       });
     });
   </script>
