@@ -16,10 +16,15 @@
     header {
       background: #ffc107;
       color: #fff;
-      padding: 1rem;
+      padding: 2rem;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       font-weight: 700;
+      animation: fadeInDown 2s ease-out;
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
     .banner {
       background: #ff6f61;
@@ -28,7 +33,9 @@
       text-align: center;
       font-size: 1.3rem;
       font-weight: bold;
-      animation: slideIn 10s linear infinite;
+      animation: slideIn 15s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
     }
     @keyframes slideIn {
       0% {transform: translateX(100%);}
@@ -36,7 +43,7 @@
     }
     section {
       padding: 2rem;
-      max-width: 960px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .cta-box {
@@ -46,14 +53,19 @@
       padding: 2rem;
       text-align: center;
       margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
     .cta-box h2 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
       color: #ff4081;
     }
     .cta-box p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 1rem;
     }
     .cta-box button {
@@ -64,30 +76,40 @@
       color: #fff;
       border-radius: 8px;
       cursor: pointer;
+      transition: background 0.3s;
+    }
+    .cta-box button:hover {
+      background: #e91e63;
     }
     .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
       gap: 2rem;
+      justify-content: center;
     }
     .step {
+      flex: 1 1 320px;
+      max-width: 350px;
       background: #fff;
-      border-radius: 16px;
+      border-radius: 20px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      padding: 2rem;
+      padding: 2.5rem;
       text-align: center;
-      transition: transform 0.2s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .step:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
     .step h3 {
-      font-size: 1.7rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
       color: #ff6f61;
+      text-transform: uppercase;
     }
     .step p {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
     footer {
       text-align: center;
@@ -98,7 +120,7 @@
   </style>
 </head>
 <body>
-  <header>Bienvenue sur Melody Tale 🎶</header>
+  <header>Bienvenue sur <span style="color:#e91e63; animation: pulse 1.5s infinite;">Melody Tale 🎶</span></header>
   <div class="banner">🎁 Bénéficiez de 50% de remise sur votre chanson personnalisée !</div>
   <section>
     <div class="cta-box">
@@ -110,15 +132,15 @@
 
     <div class="steps">
       <div class="step">
-        <h3>1. Partagez ✍️</h3>
+        <h3>1. PARTAGEZ ✍️</h3>
         <p>Racontez-nous l’histoire que vous souhaitez transformer en chanson !</p>
       </div>
       <div class="step">
-        <h3>2. Choisissez le style 🎵</h3>
+        <h3>2. CHOISISSEZ LE STYLE 🎵</h3>
         <p>Sélectionnez un style musical parmi une large gamme : pop, reggae, latino, rap…</p>
       </div>
       <div class="step">
-        <h3>3. Recevez votre chanson 🎧</h3>
+        <h3>3. RECEVEZ VOTRE CHANSON 🎧</h3>
         <p>En moins de 72h, vous recevez une chanson touchante et 100% personnalisée !</p>
       </div>
     </div>
@@ -127,5 +149,13 @@
   <footer>
     © Melody Tale - 2025. Tous droits réservés.
   </footer>
+
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
 </body>
 </html>
